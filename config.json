@@ -1,0 +1,8 @@
+{
+    "PORT": 4000,
+    "apiEndpoint": "https://deckofcardsapi.com/api/deck",
+    "mysqlHost": "busybear.c2qo2vmqahc3.us-east-2.rds.amazonaws.com",
+    "mysqlUser": "root",
+    "mysqlPassword": "I<3madison",
+    "mysqlDatabase": "BusyBear"
+}
