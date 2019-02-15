@@ -11,6 +11,6 @@ num_pics = 2
 
 for i in range(num_pics):
   sleep(5)
-  camera.capture('image%s.jpg' % i)
+  camera.capture('images/image%s.jpg' % i)
 
 camera.stop_preview()
