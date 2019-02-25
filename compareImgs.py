@@ -5,7 +5,7 @@ import cv2 as cv
 
 camera = PiCamera()
 camera.resolution = (1024,1024)
-camera.iso = 200
+camera.iso = 600
 #camera.shutter_speed = camera.exposure_speed
 #sleep(2)
 #camera.exposure_mode = 'off'
@@ -13,6 +13,7 @@ camera.iso = 200
 #sleep(2)
 #camera.awb_mode = 'off'
 #camera.awb_gains = gain
+sleep(10)
 
 cap1 = camera.capture('images/img1.jpg')
 sleep(5)
