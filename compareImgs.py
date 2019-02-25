@@ -7,9 +7,10 @@ camera = PiCamera()
 camera.resolution = (1024,1024)
 camera.iso = 200
 camera.shutter_speed = camera.exposure_speed
+sleep(2)
 camera.exposure_mode = 'off'
 gain = camera.awb_gains
-sleep(5)
+sleep(2)
 camera.awb_mode = 'off'
 camera.awb_gains = gain
 
