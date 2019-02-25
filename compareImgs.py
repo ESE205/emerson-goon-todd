@@ -11,7 +11,7 @@ camera.shutter_speed = camera.exposure_speed
 sleep(2)
 camera.exposure_mode = 'off'
 camera.awb_mode = 'off'
-camera.awb_gains = (2, 2)
+camera.awb_gains = (1.2, 1.5)
 
 cap1 = camera.capture('images/img1.jpg')
 sleep(5)
