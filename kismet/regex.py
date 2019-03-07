@@ -1,0 +1,39 @@
+import re
+import datetime
+import pprint
+import requests
+import json
+
+# Regular Expression, only gets MAC Addresses after it sees "device"
+MAC_regex = re.compile(r"(?<=\bdevice\b\s)\w\w[:]\w\w[:]\w\w[:]\w\w[:]\w\w[:]\w\w")
+
+# Get the file in read mode
+testFile = open("test.txt2","r")
+
+# Counter for total number of MAC Addresses seen including repeats
+count = 0
+
+# Declare a dictionary for the MAC Addresses 
+MACdict = dict()
+
+# Loop through the lines of the file to find MAC Addresses and store a timestamp in the dictionary
+for line in testFile:
+  MAC_addresses = MAC_regex.findall(line) # Compile all found mac addresses in var MAC_addresses
+  for address in MAC_addresses: # Loop through the individual MAC Addresses
+    count += 1 # Increment counter
+    MACdict[address] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") # Define each entry of dictionary with timstamp in Year-Month-Day Hrs:Mins:Secs
+    #print address
+
+# URL for MAC Address lookup API
+MAC_URL = 'http://macvendors.co/api/%s'
+
+# Loop through the addresses in the Dictionary and print the address with timestamp and vendor information 
+for adrs in MACdict: 
+	print(adrs + ' ' + MACdict[adrs])
+	req = requests.get(MAC_URL % adrs)
+	pprint.pprint(req.json())
+
+# Print total number of devices and number of MAC Addresses.
+# In theory, the same device may show up twice given a long enough period, unsure
+print('Total Devices: '+ str(len(MACdict)))
+print('Total # of MAC Addresses: ' + str(count))
