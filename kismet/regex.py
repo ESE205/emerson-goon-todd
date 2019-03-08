@@ -8,7 +8,7 @@ import json
 MAC_regex = re.compile(r"(?<=\bdevice\b\s)\w\w[:]\w\w[:]\w\w[:]\w\w[:]\w\w[:]\w\w")
 
 # Get the file in read mode
-testFile = open("test.txt2","r")
+testFile = open("elliot_min.txt","r")
 
 # Counter for total number of MAC Addresses seen including repeats
 count = 0
