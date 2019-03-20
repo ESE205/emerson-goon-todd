@@ -18,7 +18,7 @@
 
 
 $sql="INSERT INTO wifiMAC (macAdd,timeStampe,vendor) 
-	   VALUES ('comand','comand','line')";
+	   VALUES ('hell','yee','yuhhh')";
 	   
 
 
