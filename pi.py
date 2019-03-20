@@ -28,6 +28,8 @@ cursor = db.cursor()
 
 qString = 'INSERT INTO wifiMAC (macAdd, timeStampe, vendor) VALUES (%s, %s, %s)'
 values = ('we', 'made', 'it')
+
+
  
 cursor.execute(qString, values)
 db.commit()
