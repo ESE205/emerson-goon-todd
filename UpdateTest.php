@@ -31,7 +31,7 @@
   }
 
 
-/*$sql="INSERT INTO wifiMAC (macAdd,vendor,picture) 
+$sql="INSERT INTO wifiMAC (macAdd,vendor,picture) 
      VALUES ('$macAdd','$vendor','$pictureE')";
 	   
 
@@ -39,15 +39,15 @@
 	if ( false===$result ) {
 	  printf("error: %s\n", mysqli_error($con));
 	}
-*/
-  $sql = "SELECT picture FROM wifiMAC WHERE id = 4";
+
+  /*$sql = "SELECT picture FROM wifiMAC WHERE id = 4";
   $result = mysqli_query($con, $sql);
 
 $resultArray=mysqli_fetch_array($result);
 echo '<img src="data:image/jpeg;base64,'.base64_encode( $resultArray['image'] ).'"/>';
 if ( false===$result ) {
     printf("error: %s\n", mysqli_error($con));
-  }
+  }*/
 	else {
   echo "success";
   }
