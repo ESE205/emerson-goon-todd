@@ -1,0 +1,159 @@
+INFO: Including sub-config file: /usr/local/etc/kismet_httpd.conf
+INFO: Including sub-config file: /usr/local/etc/kismet_memory.conf
+INFO: Including sub-config file: /usr/local/etc/kismet_alerts.conf
+INFO: Including sub-config file: /usr/local/etc/kismet_80211.conf
+INFO: Including sub-config file: /usr/local/etc/kismet_storage.conf
+INFO: Including sub-config file: /usr/local/etc/kismet_logging.conf
+INFO: Including sub-config file: /usr/local/etc/kismet_uav.conf
+INFO: Loading config override file '/usr/local/etc/kismet_site.conf'
+INFO: Optional sub-config file not present: /usr/local/etc/kismet_site.conf
+[2J[2;r[1m[7mKISMET - Point your browser to http://localhost:2501 for the Kismet UI[0m
+INFO: Setting server UUID EB70D03C-4CF0-11E9-8083-4B49534D4554
+INFO: Serving static content from '/usr/local/share/kismet/httpd/'
+INFO: Serving static userdir content from '/home/pi/.kismet/httpd/'
+INFO: Loading saved HTTP sessions
+INFO: Opened OUI file '/usr/local/share/kismet/kismet_manuf.txt
+INFO: Indexing manufacturer db
+INFO: Completed indexing manufacturer db, 25542 lines 511 indexes
+INFO: Saving devices to the Kismet database log every 30 seconds.
+INFO: Registering support for DLT_PPI packet header decoding
+INFO: Registering support for DLT_RADIOTAP packet header decoding
+INFO: PHY802.11 will not process Wi-Fi 'phy' and 'control' frames; these 
+      typically are the most susceptible to corruption resulting in false 
+      devices.  This can be re-enabled with dot11_process_phy=true
+INFO: Allowing Kismet clients to view WEP keys
+ERROR: Error reading config file '/home/pi/.kismet//ssid_map.conf': 2
+INFO: Registered PHY handler 'IEEE802.11' as ID 0
+INFO: Registered PHY handler 'RTL433' as ID 1
+INFO: Registered PHY handler 'Z-Wave' as ID 2
+INFO: Registered PHY handler 'Bluetooth' as ID 3
+INFO: Registered PHY handler 'UAV' as ID 4
+INFO: Registered PHY handler 'NrfMousejack' as ID 5
+INFO: Registered PHY handler 'RTLAMR' as ID 6
+INFO: Registered PHY handler 'RTLADSB' as ID 7
+INFO: Could not open system plugin directory (/usr/local/lib/kismet/), 
+      skipping: No such file or directory
+INFO: Did not find a user plugin directory (/home/pi/.kismet//plugins/), 
+      skipping: No such file or directory
+INFO: GPS track will be logged to the Kismet logfile
+INFO: Enabling channel hopping by default on sources which support channel 
+      control.
+INFO: Setting default channel hop rate to 5/sec
+INFO: Enabling channel list splitting on sources which share the same list 
+      of channels
+INFO: Enabling channel list shuffling to optimize overlaps
+INFO: Sources will be re-opened if they encounter an error
+INFO: Saving datasources to the Kismet database log every 30 seconds.
+INFO: Launching remote capture server on 127.0.0.1:3501
+INFO: Data sources passed on the command line (via -c source), ignoring 
+      source= definitions in the Kismet config file.
+INFO: Probing interface 'mon1' to find datasource type
+INFO: Opened kismetdb log file './/Kismet-20190322-18-22-54-1.kismet'
+INFO: Saving packets to the Kismet database log.
+INFO: Starting Kismet web server...
+INFO: Started http server on port 2501
+INFO: Found type 'linuxwifi' for 'mon1'
+INFO: Interface 'mon1' is already in monitor mode
+INFO: System-wide wireless regulatory domain is set to '00'; this can 
+      cause problems setting channels.  If you encounter problems, set the 
+      regdom with a command like 'sudo iw reg set US' or whatever country 
+      is appropriate for your location.
+INFO: Data source 'mon1' launched successfully
+INFO: Detected new 802.11 Wi-Fi access point 00:A7:42:FC:6E:04
+INFO: Detected new 802.11 Wi-Fi access point 00:A7:42:FC:6E:02
+INFO: 802.11 Wi-Fi device 00:A7:42:FC:6E:04 advertising SSID 'wustl-2.0'
+INFO: 802.11 Wi-Fi device 00:A7:42:FC:6E:02 advertising SSID 
+      'wustl-encrypted-2.0'
+INFO: Detected new 802.11 Wi-Fi access point 00:A7:42:FC:6E:01
+INFO: 802.11 Wi-Fi device 00:A7:42:FC:6E:01 advertising SSID 'WUSM-secure'
+INFO: Detected new 802.11 Wi-Fi access point 00:A7:42:FC:6E:03
+INFO: 802.11 Wi-Fi device 00:A7:42:FC:6E:03 advertising SSID 
+      'wustl-guest-2.0'
+INFO: Detected new 802.11 Wi-Fi device F0:18:98:72:03:87
+INFO: Detected new 802.11 Wi-Fi access point 00:A7:42:FC:6E:05
+INFO: Detected new 802.11 Wi-Fi access point 00:A7:42:FC:6E:00
+INFO: 802.11 Wi-Fi device 00:A7:42:FC:6E:05 advertising SSID 'testing'
+INFO: 802.11 Wi-Fi device 00:A7:42:FC:6E:00 advertising SSID 'eduroam'
+INFO: Detected new 802.11 Wi-Fi device 44:C3:46:90:F4:12
+INFO: Detected new 802.11 Wi-Fi device 9C:B6:D0:F4:08:85
+INFO: Detected new 802.11 Wi-Fi device F0:18:98:37:62:35
+INFO: Detected new 802.11 Wi-Fi access point 28:AC:9E:A9:46:F2
+INFO: 802.11 Wi-Fi device 28:AC:9E:A9:46:F2 advertising SSID 
+      'wustl-encrypted-2.0'
+INFO: Detected new 802.11 Wi-Fi access point F4:4E:05:04:C1:43
+INFO: Detected new 802.11 Wi-Fi access point F4:4E:05:04:C1:45
+INFO: 802.11 Wi-Fi device F4:4E:05:04:C1:43 advertising SSID 
+      'wustl-guest-2.0'
+INFO: Detected new 802.11 Wi-Fi access point 28:AC:9E:A9:46:F1
+INFO: Detected new 802.11 Wi-Fi access point F4:4E:05:04:C1:40
+INFO: 802.11 Wi-Fi device 28:AC:9E:A9:46:F1 advertising SSID 
+      'wustl-guest-2.0'
+INFO: Detected new 802.11 Wi-Fi access point 28:AC:9E:A9:46:F3
+INFO: 802.11 Wi-Fi device F4:4E:05:04:C1:45 advertising SSID 'testing'
+INFO: 802.11 Wi-Fi device F4:4E:05:04:C1:40 advertising SSID 'eduroam'
+INFO: Detected new 802.11 Wi-Fi access point F4:4E:05:04:C1:44
+INFO: 802.11 Wi-Fi device 28:AC:9E:A9:46:F3 advertising SSID 'eduroam'
+INFO: Detected new 802.11 Wi-Fi access point F4:4E:05:04:C1:42
+INFO: 802.11 Wi-Fi device F4:4E:05:04:C1:44 advertising SSID 'wustl-2.0'
+INFO: Detected new 802.11 Wi-Fi access point B4:B6:86:60:CF:05
+INFO: Detected new 802.11 Wi-Fi access point 28:AC:9E:A9:46:F0
+INFO: 802.11 Wi-Fi device B4:B6:86:60:CF:05 advertising SSID 'DIRECT-04-HP 
+      DeskJet 2600 series'
+INFO: 802.11 Wi-Fi device F4:4E:05:04:C1:42 advertising SSID 
+      'wustl-encrypted-2.0'
+INFO: Detected new 802.11 Wi-Fi access point F4:4E:05:04:C1:41
+INFO: 802.11 Wi-Fi device 28:AC:9E:A9:46:F0 advertising SSID 'wustl-2.0'
+INFO: Detected new 802.11 Wi-Fi access point 28:AC:9E:A9:46:F4
+INFO: 802.11 Wi-Fi device F4:4E:05:04:C1:41 advertising SSID 'WUSM-secure'
+INFO: 802.11 Wi-Fi device 28:AC:9E:A9:46:F4 advertising SSID 'WUSM-secure'
+INFO: Detected new 802.11 Wi-Fi device 2A:AC:9E:A9:46:F0
+INFO: Detected new 802.11 Wi-Fi device 5C:AA:FD:F9:B1:02
+INFO: Detected new 802.11 Wi-Fi device 98:01:A7:D4:D0:6D
+INFO: Detected new 802.11 Wi-Fi device 94:65:2D:6C:DD:72
+INFO: Detected new 802.11 Wi-Fi device 4C:7C:5F:0C:62:C8
+INFO: Detected new 802.11 Wi-Fi device F6:4E:05:04:C1:40
+INFO: Detected new 802.11 Wi-Fi device 02:A7:42:FC:6E:00
+INFO: Detected new 802.11 Wi-Fi device 7C:01:91:96:18:CA
+INFO: Detected new 802.11 Wi-Fi device 82:E5:44:D5:91:F3
+INFO: Detected new 802.11 Wi-Fi device D2:0F:F1:24:48:C9
+INFO: Detected new 802.11 Wi-Fi device 64:70:33:5E:A8:6B
+INFO: Detected new 802.11 Wi-Fi device D4:61:9D:5D:C6:73
+INFO: Detected new 802.11 Wi-Fi device D0:57:7B:4D:86:36
+INFO: Detected new 802.11 Wi-Fi device 00:08:E3:FF:FD:EC
+INFO: Detected new 802.11 Wi-Fi device 40:9C:28:61:91:D2
+INFO: Detected new 802.11 Wi-Fi device DE:80:BF:92:E1:CC
+INFO: Detected new 802.11 Wi-Fi device 6C:E8:5C:7C:75:56
+INFO: Detected new 802.11 Wi-Fi device 96:E9:3F:82:BE:F3
+INFO: Detected new 802.11 Wi-Fi device 76:58:11:3E:FF:A2
+INFO: Detected new 802.11 Wi-Fi device FE:C1:10:F8:1F:B9
+INFO: Detected new 802.11 Wi-Fi device BC:E1:43:34:B7:66
+INFO: Detected new 802.11 Wi-Fi device C6:BA:23:00:FE:C0
+INFO: Detected new 802.11 Wi-Fi device 8C:8E:F2:DC:BA:1E
+INFO: Detected new 802.11 Wi-Fi device C8:D0:83:8A:35:7C
+INFO: Detected new 802.11 Wi-Fi device D0:D2:B0:59:F9:BB
+INFO: Detected new 802.11 Wi-Fi device D8:8F:76:6B:56:36
+INFO: Detected new 802.11 Wi-Fi device F4:5C:89:99:78:C3
+INFO: Detected new 802.11 Wi-Fi device 74:40:BB:1C:EC:97
+INFO: Detected new 802.11 Wi-Fi device 1C:36:BB:94:40:37
+INFO: Detected new 802.11 Wi-Fi device F0:98:9D:6D:94:D2
+INFO: Detected new 802.11 Wi-Fi device A0:56:F3:7F:96:61
+INFO: Detected new 802.11 Wi-Fi device 00:B3:62:D9:07:C2
+INFO: Detected new 802.11 Wi-Fi device C8:D0:83:93:08:FC
+INFO: Detected new 802.11 Wi-Fi device 20:EE:28:71:44:3A
+INFO: Detected new 802.11 Wi-Fi device B0:65:BD:EF:9C:17
+INFO: Detected new 802.11 Wi-Fi device 14:C2:13:23:B8:24
+INFO: Detected new 802.11 Wi-Fi device 42:5B:57:2E:F8:92
+INFO: Detected new 802.11 Wi-Fi device F0:98:9D:C9:83:5B
+INFO: Detected new 802.11 Wi-Fi device 6C:72:E7:C9:C1:70
+INFO: Detected new 802.11 Wi-Fi device 84:41:67:42:97:C9
+INFO: Detected new 802.11 Wi-Fi device 3A:60:C4:4E:EE:F8
+INFO: Detected new 802.11 Wi-Fi device E2:49:DB:0F:9C:9F
+INFO: Detected new 802.11 Wi-Fi device 38:53:9C:9E:63:4E
+INFO: Detected new 802.11 Wi-Fi device 70:EF:00:DD:B8:C9
+INFO: Detected new 802.11 Wi-Fi device 66:09:D4:68:BA:A3
+INFO: Detected new 802.11 Wi-Fi device 4C:57:CA:D9:22:46
+INFO: Detected new 802.11 Wi-Fi device CA:B7:F5:3A:ED:70
+INFO: Detected new 802.11 Wi-Fi device 78:28:CA:BA:BA:53
+INFO: Detected new 802.11 Wi-Fi device B6:B5:D3:9C:CF:EE
+INFO: Detected new 802.11 Wi-Fi device 2E:89:8D:8E:26:BE
+INFO: Shutting down plugins...
