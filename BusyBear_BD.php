@@ -7,24 +7,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-
-#myProgress {
-  width: 100%;
-  background-color: #ddd;
-}
-
-#myBar {
-  width: 7%;
-  height: 30px;
-  background-color: #ff3300;
-  text-align: center;
-  line-height: 30px;
-  color: white;
-
-
-
-
-
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
@@ -37,7 +19,6 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
 input[type=submit] {
     width: 100%;
     background-color: #F2453E;
@@ -48,11 +29,9 @@ input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
-
 input[type=submit]:hover {
     background-color: #45a049;
 }
-
 div {
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -64,7 +43,6 @@ div {
     border: none;
     border-radius: 4px;
     background-color: #f1f1f1;
-
 }
 textarea {
     width: 100%;
@@ -89,13 +67,11 @@ textarea {
     -ms-user-select: none;
     user-select: none;
 }
-
 /* Hide the browser's default radio button */
 .container input {
     position: absolute;
     opacity: 0;
 }
-
 /* Create a custom radio button */
 .checkmark {
     position: absolute;
@@ -104,45 +80,38 @@ textarea {
     height: 16px;
     width: 16px;
     background-color: #ccc;
-    
+    border-radius: 50%;
 }
-
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
     background-color: black;
 }
-
 /* When the radio button is checked, add a blue background */
 .container input:checked ~ .checkmark {
     background-color: #2196F3;
 }
-
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
-
 /* Show the indicator (dot/circle) when checked */
 .container input:checked ~ .checkmark:after {
     display: block;
 }
-
 /* Style the indicator (dot/circle) */
 .container .checkmark:after {
-  
- left: 5.76px;
-  top: 2.5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  top: 5.6px;
+  left: 5.6px;
+  width: 5.12px;
+  height: 5.12px;
+  border-radius: 50%;
+  background: white;
+}
 </style>
 <body>
+
 
 <!-- Navbar -->
 <div class="w3-top">
