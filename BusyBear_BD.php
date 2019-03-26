@@ -148,9 +148,9 @@ textarea {
 <div class="w3-top">
   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="http://localhost/BusyBear_Launch.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
-    <a href="http://localhost/BusyBear_Olin.php" class="w3-bar-item w3-button w3-padding-large w3-white">Olin</a>
-    <a href="http://localhost/Add_Animal.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Mallinckrodt</a>
+    <a href="http://www.mybusybear.com" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+    <a href="http://www.mybusybear.com/BusyBear_BD.php" class="w3-bar-item w3-button w3-padding-large w3-white">Bear Den</a>
+    <a href="http://www.mybusybear.com/AddTest.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Test Add</a>
   
     
     
@@ -158,10 +158,9 @@ textarea {
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="http://localhost/Add_Pet.php" class="w3-bar-item w3-button w3-padding-large">Add a Pet</a>
-    <a href="http://localhost/Add_Animal.php" class="w3-bar-item w3-button w3-padding-large">Add an Animal</a>
-    <a href="http://localhost/ViewDatabase.php" class="w3-bar-item w3-button w3-padding-large">View Pets</a>
-    <a href="http://localhost/View_Table_Animals.php" class="w3-bar-item w3-button w3-padding-large">View Animals</a>
+    <a href="http://www.mybusybear.com" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="http://www.mybusybear.com/BD.php" class="w3-bar-item w3-button w3-padding-large">Bear Den</a>
+    <a href="http://www.mybusybear.com/AddTest.php" class="w3-bar-item w3-button w3-padding-large">Test Add</a>
   </div>
 </div>
 <div class="w3-row-padding w3-padding-64 w3-container">
