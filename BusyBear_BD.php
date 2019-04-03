@@ -135,7 +135,7 @@ textarea {
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
-      <h1 style="text-align:center" ><br>How Busy is Olin?</h1>
+      <h1 style="text-align:center" ><br>How Busy is Bear Den?</h1>
       <h5 class="w3-padding-small"></h5>
       <div>
     <div id="piechart"></div>
@@ -149,7 +149,7 @@ textarea {
   }
 
 
-$sql="select * from wifiMAC where timestampe > now() - interval '5' minute;";
+$sql="select * from wifiMAC_BD where timestampe > now() - interval '5' minute;";
      
 
   $result = mysqli_query($con, $sql);
@@ -161,7 +161,9 @@ $result2 = mysqli_query($con, $sql);
 
   $num_rows2 = mysqli_num_rows($result2);
   if($num_rows2 == 0){
+      if($num_rows > 0){
     $sql="INSERT INTO historicalData (numAddresses) VALUES ('$num_rows')";
+      }
   }
   $result3 = mysqli_query($con, $sql);
 
