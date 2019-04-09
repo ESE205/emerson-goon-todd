@@ -147,18 +147,12 @@ textarea {
   {
      echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
-
-
 $sql="select * from wifiMAC_BD where timestampe > now() - interval '5' minute;";
      
-
   $result = mysqli_query($con, $sql);
-
   $num_rows = mysqli_num_rows($result);
-
 $sql="select * from historicalData where timestampe > now() - interval '5' minute;";
 $result2 = mysqli_query($con, $sql);
-
   $num_rows2 = mysqli_num_rows($result2);
   if($num_rows2 == 0){
       if($num_rows > 0){
@@ -166,17 +160,21 @@ $result2 = mysqli_query($con, $sql);
       }
   }
   $result3 = mysqli_query($con, $sql);
-
-
   /*$sql = "SELECT picture FROM wifiMAC WHERE id = 4";
   $result = mysqli_query($con, $sql);
-
 $resultArray=mysqli_fetch_array($result);
 echo '<img src="data:image/jpeg;base64,'.base64_encode( $resultArray['image'] ).'"/>';
 if ( false===$result ) {
     printf("error: %s\n", mysqli_error($con));
   }*/ 
-
+  $sql2 = "SELECT Max(numAddresses) AS max FROM historicalData_BD";
+ $sql3 = "SELECT Min(numAddresses) AS min FROM historicalData_BD";
+ $max = mysqli_query($con, $sql2);
+ $row=$max->fetch_assoc();
+ $maxInt= (int)$row['max'];
+ $min = mysqli_query($con, $sql3);
+ $row=$max->fetch_assoc();
+ $minInt= (int)$row['min'];
   mysqli_close($con);
   ?>
 
@@ -185,9 +183,18 @@ if ( false===$result ) {
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
   var numRows = 0;
+  var maxNumRows = 0;
+  var minNumRows = 0;
  numRows = "<?php echo $num_rows ?>";
  numRows = Number(numRows);
+  maxNumRows = "<?php echo $maxInt ?>";
+ maxNumRows = Number(maxNumRows);
+  minNumRows = "<?php echo $minInt ?>";
+ minNumRows = Number(minNumRows);
 
+ newMax = maxNumRows - minNumRows;
+ newCurrent = numRows - minNumRows;
+ 
 
 </script>
 
@@ -195,20 +202,16 @@ if ( false===$result ) {
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
-
-
 // Draw the chart and set the chart values
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
   ['Task', 'Hours per Day'],
-  ['Used', numRows],
-  ['Free', 10-numRows],
+  ['Used', newCurrent],
+  ['Free', newMax - newCurrent],
  
 ]);
-
   // Optional; add a title and set the width and height of the chart
   var options = {'title':'How Full is Olin?', 'width':500, 'height':400};
-
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
   chart.draw(data, options);
@@ -221,55 +224,56 @@ function drawChart() {
 </div>
 </div>
 </div>
-<script>
-  var search = function() {
-    var name = document.getElementById("FnameP").value;
-    var type = [];
-    type.push(document.getElementById("dog").checked);
-    type.push(document.getElementById("cat").checked);
-    type.push(document.getElementById("frog").checked);
-    type.push(document.getElementById("snake").checked);
-    type.push(document.getElementById("fish").checked);
-    if(!name && allFalse(type)){
-      document.getElementById("res").innerHTML = ""; 
-      return;
-    }
-    var mes = new XMLHttpRequest();
-    mes.onreadystatechange = function(){
-      document.getElementById("res").innerHTML = mes.responseText; 
-    }
-    mes.open("POST", "/Update_Pet.php")
-    mes.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    console.log("name="+name+(type ? "&type="+JSON.stringify(type): ""));
-    mes.send("name="+name+(type ? "&type="+JSON.stringify(type): ""));
-  }
-
-  var allFalse = function(arr){
-    var a = true;
-    for(var i = 0; i < arr.length; i++)
-      a &= !arr[i];
-    return a;
-  }
-</script>
-<h1>How full is Olin?</h1>
-
-<div id="myProgress">
-  <div id="myBar">80%</div>
-</div>
-
 <br>
+<br>
+<br>
+ 
 <script>
+window.onload = function () {
 
-     
-      width = 2; 
-      elem.style.width = width + '%'; 
-      elem.innerHTML = 8  + '%';
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Popular Times"
+	},
+  
+	axisY: {
+		title: "How Busy"
+	},
+	data: [{        
+		type: "column",  
+		showInLegend: false, 
+		legendMarkerColor: "grey",
+		legendText: "MMbbl = one million barrels",
+		dataPoints: [      
+			{ y: 100878, label: "9am" },
+          	{ y: 150878, label: " " },
+         	 { y: 300878, label: "11am" },
+           { y: 100878, label: " " },
+           { y: 150878, label: "1p" },
+           { y: 160878, label: " " }, 
+          { y: 130878, label: "3p" },
+           { y: 120878, label: " " },
+           { y: 140878, label: "4p" },
+           { y: 200878, label: "" },
+           { y: 220878, label: "6p" },
+           { y: 300878, label: " " },
+           { y: 400878, label: "8p" },
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
     
-
-</script>
-<br>
-<br>
-<br>
     <!-- Second Grid -->
 
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
@@ -314,4 +318,3 @@ function myFunction() {
 <br>
 <br>
 </body>
-
