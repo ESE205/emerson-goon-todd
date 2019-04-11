@@ -33,7 +33,7 @@ print('Connection established')
 MAC_regex = re.compile(r"(?<=\bdevice\b\s)\w\w[:]\w\w[:]\w\w[:]\w\w[:]\w\w[:]\w\w")
 
 # Get the file in read mode
-testFile = open("test3.txt","r")
+testFile = open("tomsroom.txt","r")
 
 # Counter for total number of MAC Addresses seen including repeats
 count = 0
