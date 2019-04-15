@@ -147,7 +147,7 @@ textarea {
   {
      echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
-$sql="SELECT count(*) FROM wifiMAC_BD 
+$sql="SELECT * FROM wifiMAC_BD 
 where (timestampe > now() - interval '5' minute) AND 
 ( vendor = 'Apple, Inc.' OR  vendor = 'Google, Inc.' Or  vendor ='Microsoft' Or  vendor ='Samsung Electronics Co.,Ltd' OR  vendor ='HUAWEI TECHNOLOGIES CO.,LTD');";
      
