@@ -147,7 +147,9 @@ textarea {
   {
      echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
-$sql="select * from wifiMAC_BD where timestampe > now() - interval '5' minute;";
+$sql="SELECT count(*) FROM wifiMAC_BD 
+where (timestampe > now() - interval '5' minute) AND 
+( vendor = 'Apple, Inc.' OR  vendor = 'Google, Inc.' Or  vendor ='Microsoft' Or  vendor ='Samsung Electronics Co.,Ltd' OR  vendor ='HUAWEI TECHNOLOGIES CO.,LTD');";
      
   $result = mysqli_query($con, $sql);
   $num_rows = mysqli_num_rows($result);
@@ -167,8 +169,8 @@ echo '<img src="data:image/jpeg;base64,'.base64_encode( $resultArray['image'] ).
 if ( false===$result ) {
     printf("error: %s\n", mysqli_error($con));
   }*/ 
-  $sql2 = "SELECT Max(numAddresses) AS max FROM historicalData_BD";
- $sql3 = "SELECT Min(numAddresses) AS min FROM historicalData_BD";
+  $sql2 = "SELECT Max(numAddresses) AS max FROM historicalData_BD_Limited";
+ $sql3 = "SELECT Min(numAddresses) AS min FROM historicalData_BD_Limited";
  $max = mysqli_query($con, $sql2);
  $row=$max->fetch_assoc();
  $maxInt= (int)$row['max'];
