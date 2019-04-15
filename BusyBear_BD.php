@@ -180,7 +180,7 @@ $sql4 = "SELECT numAddresses AS current FROM historicalData_BD_Limited";
  $row=$max->fetch_assoc();
  $minInt= (int)$row['min'];
 $current = mysqli_query($con, $sql4);
- $row=$max->fetch_assoc();
+ $row=$current->fetch_assoc();
  $currentInt= (int)$row['current'];
   mysqli_close($con);
   ?>
