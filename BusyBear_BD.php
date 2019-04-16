@@ -215,7 +215,7 @@ function drawChart() {
  
 ]);
   // Optional; add a title and set the width and height of the chart
-  var options = {'title':'How Full is BD?', 'width':500, 'height':400, 'backgroundColor': '#f2f2f2'};
+  var options = {'title':'How Full is BD?', 'backgroundColor': '#f2f2f2'};
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
   chart.draw(data, options);
