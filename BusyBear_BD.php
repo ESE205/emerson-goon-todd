@@ -119,7 +119,7 @@ textarea {
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="http://www.mybusybear.com" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
     <a href="http://www.mybusybear.com/BusyBear_BD.php" class="w3-bar-item w3-button w3-padding-large w3-white">Bear Den</a>
-    <a href="http://www.mybusybear.com/AddTest.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Test Add</a>
+    
   
     
     
@@ -129,7 +129,7 @@ textarea {
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href="http://www.mybusybear.com" class="w3-bar-item w3-button w3-padding-large">Home</a>
     <a href="http://www.mybusybear.com/BD.php" class="w3-bar-item w3-button w3-padding-large">Bear Den</a>
-    <a href="http://www.mybusybear.com/AddTest.php" class="w3-bar-item w3-button w3-padding-large">Test Add</a>
+    
   </div>
 </div>
 <div class="w3-row-padding w3-padding-64 w3-container">
@@ -169,7 +169,6 @@ echo '<img src="data:image/jpeg;base64,'.base64_encode( $resultArray['image'] ).
 if ( false===$result ) {
     printf("error: %s\n", mysqli_error($con));
   }*/ 
-
  $sql2 = "SELECT Max(numAddresses) AS max FROM historicalData_BD_Limited";
  $sql3 = "SELECT Min(numAddresses) AS min FROM historicalData_BD_Limited";
 $sql4 = "SELECT numAddresses AS current FROM historicalData_BD_Limited where timestampe > now() - interval '5' minute";
@@ -198,11 +197,9 @@ $current = mysqli_query($con, $sql4);
  maxNumRows = Number(maxNumRows);
   minNumRows = "<?php echo $minInt ?>";
  minNumRows = Number(minNumRows);
-
  newMax = maxNumRows - minNumRows;
  newCurrent = numRows - minNumRows;
  
-
 </script>
 
 <script type="text/javascript">
@@ -218,66 +215,155 @@ function drawChart() {
  
 ]);
   // Optional; add a title and set the width and height of the chart
-  var options = {'title':'How Full is BD?', 'width':500, 'height':400};
+  var options = {'title':'How Full is BD?', 'width':500, 'height':400, 'backgroundColor': '#f2f2f2'};
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
   chart.draw(data, options);
 }
 </script>
+<?php
+$con = mysqli_connect("busybear.c2qo2vmqahc3.us-east-2.rds.amazonaws.com","root","I<3madison","BusyBear");
+ // Check connection
+  if (mysqli_connect_errno())
+  {
+     echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+$busyDays = array( 0, 0, 0, 0, 0, 0);
+$sqlTimes = array("SELECT count(*) AS counts FROM wifiMAC_BD WHERE timestampe >= now() - interval '30' day AND HOUR(timestampe) >= 22 AND HOUR(timestampe) <  23 AND ( vendor = 'Apple, Inc.' OR  vendor = 'Google, Inc.' Or  vendor ='Microsoft' Or  vendor ='Samsung Electronics Co.,Ltd' OR  vendor ='HUAWEI TECHNOLOGIES CO.,LTD')", 
+"SELECT count(*) AS counts FROM wifiMAC_BD WHERE timestampe >= now() - interval '30' day  AND HOUR(timestampe) >= 23 AND HOUR(timestampe) <  24 AND ( vendor = 'Apple, Inc.' OR  vendor = 'Google, Inc.' Or  vendor ='Microsoft' Or  vendor ='Samsung Electronics Co.,Ltd' OR  vendor ='HUAWEI TECHNOLOGIES CO.,LTD')",
+"SELECT count(*) AS counts FROM wifiMAC_BD WHERE timestampe >= now() - interval '30' day  AND HOUR(timestampe) >= 0 AND HOUR(timestampe) <  1 AND ( vendor = 'Apple, Inc.' OR  vendor = 'Google, Inc.' Or  vendor ='Microsoft' Or  vendor ='Samsung Electronics Co.,Ltd' OR  vendor ='HUAWEI TECHNOLOGIES CO.,LTD')", 
+"SELECT count(*) AS counts FROM wifiMAC_BD WHERE timestampe >= now() - interval '30' day  AND HOUR(timestampe) >= 1 AND HOUR(timestampe) <  2 AND ( vendor = 'Apple, Inc.' OR  vendor = 'Google, Inc.' Or  vendor ='Microsoft' Or  vendor ='Samsung Electronics Co.,Ltd' OR  vendor ='HUAWEI TECHNOLOGIES CO.,LTD')", 
+"SELECT count(*) AS counts FROM wifiMAC_BD WHERE timestampe >= now() - interval '30' day  AND HOUR(timestampe) >= 2 AND HOUR(timestampe) <  3 AND ( vendor = 'Apple, Inc.' OR  vendor = 'Google, Inc.' Or  vendor ='Microsoft' Or  vendor ='Samsung Electronics Co.,Ltd' OR  vendor ='HUAWEI TECHNOLOGIES CO.,LTD')", 
+"SELECT count(*) AS counts FROM wifiMAC_BD WHERE timestampe >= now() - interval '30' day  AND HOUR(timestampe) >= 3 AND HOUR(timestampe) <  4 AND ( vendor = 'Apple, Inc.' OR  vendor = 'Google, Inc.' Or  vendor ='Microsoft' Or  vendor ='Samsung Electronics Co.,Ltd' OR  vendor ='HUAWEI TECHNOLOGIES CO.,LTD')");
 
 
 
-</div>
-</div>
-</div>
-</div>
-<br>
-<br>
-<br>
- 
-<script>
-window.onload = function () {
+for ($x = 0; $x < 6; $x++) {
 
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	theme: "light2", // "light1", "light2", "dark1", "dark2"
-	title:{
-		text: "Popular Times"
-	},
+  $result = mysqli_query($con, $sqlTimes[$x]);
+  if ( false===$result ) {
+    printf("error: %s\n", mysqli_error($con));
+  }
+  $row=$result->fetch_assoc();
+  $maxInt= (int)$row['counts'];
+  $busyDays[$x] = $maxInt;
   
-	axisY: {
-		title: "How Busy"
-	},
-	data: [{        
-		type: "column",  
-		showInLegend: false, 
-		legendMarkerColor: "grey",
-		legendText: "MMbbl = one million barrels",
-		dataPoints: [      
-			{ y: 100878, label: "9am" },
-          	{ y: 150878, label: " " },
-         	 { y: 300878, label: "11am" },
-           { y: 100878, label: " " },
-           { y: 150878, label: "1p" },
-           { y: 160878, label: " " }, 
-          { y: 130878, label: "3p" },
-           { y: 120878, label: " " },
-           { y: 140878, label: "4p" },
-           { y: 200878, label: "" },
-           { y: 220878, label: "6p" },
-           { y: 300878, label: " " },
-           { y: 400878, label: "8p" },
-		]
-	}]
-});
-chart.render();
 
 }
+   $maxRowsHistorical = 0;
+   $past5 = 0.00;
+   $past6 = 0.00;
+   $past7 = 0.00;
+   $past8 = 0.00;
+   $past9 = 0.00;
+   $past10 = 0.00;
+   $maxRowsHistorical = max($busyDays);
+   $past5 = $busyDays[0];
+   $past6 = $busyDays[1];
+   $past7 = $busyDays[2];
+   $past8 = $busyDays[3];
+   $past9 = $busyDays[4];
+   $past10 = $busyDays[5];
+   $past5 = $past5 / $maxRowsHistorical;
+   $past6 = $past6 / $maxRowsHistorical;
+   $past7 = $past7 / $maxRowsHistorical;
+   $past8 = $past8 / $maxRowsHistorical;
+   $past9 = $past9 / $maxRowsHistorical;
+   $past10 = $past10 / $maxRowsHistorical;
+   
+
+?>
+<script>
+  var past5 = 0.00;
+  var past6 = 0.00;
+  var past7 = 0.00;
+  var past8 = 0.00;
+  var past9 = 0.00;
+  var past10 = 0.00;
+  var past5 = "<?php echo $past5 ?>";
+  var past6 = "<?php echo $past6 ?>";
+  var past7 = "<?php echo $past7 ?>";
+  var past8 = "<?php echo $past8 ?>";
+  var past9 = "<?php echo $past9 ?>";
+  var past10 = "<?php echo $past10 ?>";
+   past5 *= 100;
+   past6 *= 100;
+   past7 *= 100;
+   past8 *= 100;
+   past9 *= 100;
+   past10 *= 100;
 </script>
+
+
+<script type="text/javascript">
+window.onload = function () {
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: false,
+  backgroundColor: null,
+  theme: "light2", // "light1", "light2", "dark1", "dark2"
+  
+  title: {
+        text: " "
+      },
+      axisY:{    
+        valueFormatString:  " ", // move comma to change formatting
+        prefix: ""
+     },
+     axisX: {
+        labelAngle: -30
+      },
+      data: [
+      {        
+        type: "column",
+        dataPoints: [
+        { label: "5-6p", y: 0 ,},
+        { label: "6-7p", y: 0 ,},
+        { label: "7-8p", y: 0 ,},
+        { label: "8-9p", y: 0 ,},
+        { label: "9-10p", y: 0 ,},
+        { label: "10-11p", y: 0 ,},
+        
+        
+        ]
+      }
+      ]
+    });
+
+   function updateChart() {
+  var boilerColor;
+  var yVals = [past5, past6, past7, past8, past9, past10];
+  var dps = chart.options.data[0].dataPoints;
+  for (var i = 0; i < dps.length; i++) {
+    
+    boilerColor = yVals[i] > 200 ? "#FF2500" : yVals[i] >= 170 ? "#FF6000" : yVals[i] < 170 ? "#6B8E23 " : null;
+    dps[i] = {label: ""+(i+5) + "-" + (i+6) + "p" , y: yVals[i]};
+  }
+  chart.options.data[0].dataPoints = dps; 
+  console.log("Ethan is an awesome TA (and David too)");
+  chart.render();
+};
+updateChart();
+
+setInterval(function() {updateChart()}, 500);
+  }
+</script>
+
+<h1 style="text-align:center" ><br>Popular Times</h1>
+<br>
+<div align="center">
+<div id="chartContainer" style="height: 300px; width: 100%;"><script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></div></div>
+
+
+</div>
+</div>
+</div>
+</div>
+<br>
+
+ 
+
 </head>
 <body>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>
     
