@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sleep 242s
+python3 uploader.py
+
