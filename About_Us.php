@@ -10,6 +10,12 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
+h4 {
+  font-family: "Lato", sans-serif;
+  font-size: 17px; 
+   
+
+} 
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -19,7 +25,6 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
 input[type=submit] {
     width: 100%;
     background-color: #F2453E;
@@ -30,11 +35,9 @@ input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
-
 input[type=submit]:hover {
     background-color: #45a049;
 }
-
 div {
     border-radius: 6px;
     background-color: #f2f2f2;
@@ -46,7 +49,6 @@ div {
     border: none;
     border-radius: 4px;
     background-color: #f1f1f1;
-
 }
 textarea {
     width: 100%;
@@ -71,13 +73,11 @@ textarea {
     -ms-user-select: none;
     user-select: none;
 }
-
 /* Hide the browser's default radio button */
 .container input {
     position: absolute;
     opacity: 0;
 }
-
 /* Create a custom radio button */
 .checkmark {
     position: absolute;
@@ -88,29 +88,24 @@ textarea {
     background-color: #ccc;
     border-radius: 50%;
 }
-
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
     background-color: black;
 }
-
 /* When the radio button is checked, add a blue background */
 .container input:checked ~ .checkmark {
     background-color: #2196F3;
 }
-
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
-
 /* Show the indicator (dot/circle) when checked */
 .container input:checked ~ .checkmark:after {
     display: block;
 }
-
 /* Style the indicator (dot/circle) */
 .container .checkmark:after {
   top: 5.6px;
@@ -119,6 +114,9 @@ textarea {
   height: 5.12px;
   border-radius: 50%;
   background: white;
+}
+.links {
+  float: center;
 }
 </style>
 <body>
@@ -152,22 +150,22 @@ textarea {
       <h5 class="w3-padding-small"></h5>
       <div>
     <p>
-    <img src="Thomas.JPG" alt="Me Myself and I" style="max-width:45%;height: auto;"; align= "left";>
+    <img src="Thomas.jpg" alt="Me Myself and I" style="max-width:45%;height: auto;"; align= "left";>
     </p>
-    <h1 style="text-align:right" ><br>Thomas Emerson</h1>
-    <h4 style="text-align:center" ><br>Hi, I'm a first-year student at Washington University in St. Louis. I'm a systems engineering and Business double major. At BusyBear I'm tasked with managing and updating all server-side applications including our website and database. </h4> <br><br>
+    <h1 style="text-align:center" ><br>Thomas Emerson</h1>
+    <h4 style="text-align:center" ><br>Hi, I'm a first-year student at Washington University in St. Louis. I'm a systems engineering and Business double major. At BusyBear I'm tasked with managing and updating all server-side applications including our website and database. </h4> <br><br><br><br>
 
-    <img src="Tom.JPG" alt="Me Myself and I" style="max-width:45%;height: auto;"; align= "left";>
+    <img src="Tom.jpg" alt="Me Myself and I" style="max-width:45%;height: auto;"; align= "left";>
     </p>
-    <h1 style="text-align:right" ><br>Tom Goon</h1>
-    <h4 style="text-align:center" ><br>Hi, I'm a first-year student at Washington University in St. Louis. I'm a systems engineering and Business double major. At BusyBear I'm tasked with managing and updating all server-side applications including our website and database. </h4><br><br>
+    <h1 style="text-align:center" ><br>Tom Goon</h1>
+    <h4 style="text-align:center" ><br>I'm a systems engineer of the class of 2022 at Washington University in St. Louis and twice removed 2nd son of Dr. Lew.</h4><br><br><br><br><br><br><br>
 
-    <img src="Allison.jpeg" alt="Me Myself and I" style="max-width:45%;height: auto;"; align= "left";>
+    <img src="Allison.jpg" alt="Me Myself and I" style="max-width:45%;height: auto;"; align= "left";>
     </p>
-    <h1 style="text-align:right" ><br>Allison Todd</h1>
+    <h1 style="text-align:center" ><br>Allison Todd</h1>
     <h4 style="text-align:center" ><br>Hi, I'm a first-year student at Washington University in St. Louis. I'm a systems engineering and Business double major. At BusyBear I'm tasked with managing and updating all server-side applications including our website and database. </h4><br><br><br><br>
-
-    <li> <a href="https://classes.engineering.wustl.edu/ese205/core/index.php?title=BusyBear" class="w3-bar-item w3-button w3-hide-small w3-padding-large"> Visit Our Wiki!  </a>  </li>
+ <div class="links">
+    <li> <a href="https://classes.engineering.wustl.edu/ese205/core/index.php?title=BusyBear" class="w3-bar-item w3-button w3-hide-small w3-padding-large"> Visit Our Wiki!  </a>  </li></div>
 
 <form method="post" action="http://www.mybusybear.com/About_Us.php">
   <label for="Notes"><br><br>Any concerns or comments? . . . Leave them below:</label><br>
