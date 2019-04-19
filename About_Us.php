@@ -158,7 +158,7 @@ textarea {
     <img src="Tom.jpg" alt="Me Myself and I" style="max-width:45%;height: auto;"; align= "left";>
     </p>
     <h1 style="text-align:center" ><br>Tom Goon</h1>
-    <h4 style="text-align:center" ><br>I'm a systems engineer of the class of 2022 at Washington University in St. Louis and twice removed 2nd son of Dr. Lew.</h4><br><br><br><br><br><br><br>
+    <h4 style="text-align:center" ><br>Hey, I'm a systems engineer major with a double minor in philosophy and computer science of the class of 2022 at Washington University in St. Louis. I'm in charge of managing the software and hardware that controls the networking aspect of BusyBear. If you love food as much as as I do, I know you'll find BusyBear useful!</h4><br><br><br><br><br><br><br>
 
     <img src="Allison.jpg" alt="Me Myself and I" style="max-width:45%;height: auto;"; align= "left";>
     </p>
