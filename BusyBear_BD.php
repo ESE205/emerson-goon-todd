@@ -77,9 +77,9 @@ echo '<img src="data:image/jpeg;base64,'.base64_encode( $resultArray['image'] ).
 if ( false===$result ) {
     printf("error: %s\n", mysqli_error($con));
   }*/ 
- $sql2 = "SELECT Max(numAddresses) AS max FROM historicalData_BD_Limited";
- $sql3 = "SELECT Min(numAddresses) AS min FROM historicalData_BD_Limited";
-$sql4 = "SELECT numAddresses AS current FROM historicalData_BD_Limited where timestampe > now() - interval '5' minute";
+ $sql2 = "SELECT Max(numAddresses) AS max FROM historicalData_Lapota_Limited";
+ $sql3 = "SELECT Min(numAddresses) AS min FROM historicalData_Lapota_Limited";
+$sql4 = "SELECT numAddresses AS current FROM historicalData_Lapota_Limited where timestampe > now() - interval '5' minute";
  $max = mysqli_query($con, $sql2);
  $row=$max->fetch_assoc();
  $maxInt= (int)$row['max'];
