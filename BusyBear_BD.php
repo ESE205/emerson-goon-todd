@@ -1,5 +1,5 @@
 <html>
-<title>Oracle Project</title>
+<title>BusyBear</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -26,7 +26,7 @@ div {
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="http://www.mybusybear.com" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
     <a href="http://www.mybusybear.com/BusyBear_BD.php" class="w3-bar-item w3-button w3-padding-large w3-white">Bear Den</a>
-    
+    <a href="http://www.mybusybear.com/About_Us.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About Us</a>
   
     
     
@@ -36,6 +36,7 @@ div {
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href="http://www.mybusybear.com" class="w3-bar-item w3-button w3-padding-large">Home</a>
     <a href="http://www.mybusybear.com/BD.php" class="w3-bar-item w3-button w3-padding-large">Bear Den</a>
+      <a href="http://www.mybusybear.com/About_Us.php" class="w3-bar-item w3-button w3-padding-large">About Us</a>
     
   </div>
 </div>
