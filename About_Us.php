@@ -158,12 +158,13 @@ textarea {
     <img src="Tom.jpg" alt="Me Myself and I" style="max-width:45%;height: auto;"; align= "left";>
     </p>
     <h1 style="text-align:center" ><br>Tom Goon</h1>
-    <h4 style="text-align:center" ><br>Hey, I'm a systems engineer major with a double minor in philosophy and computer science of the class of 2022 at Washington University in St. Louis. I'm in charge of managing the software and hardware that controls the networking aspect of BusyBear. If you love food as much as as I do, I know you'll find BusyBear useful!</h4><br><br><br><br><br><br><br>
+    <h4 style="text-align:center" ><br>Hey, I'm a systems engineer major with a double minor in philosophy and computer science of the class of 2022 at Washington University in St. Louis. I'm in charge of managing the software and hardware that controls the networking aspect of BusyBear. If you love food as much as as I do, I know you'll find BusyBear useful!</h4><br><br><br><br><br>
 
     <img src="Allison.jpg" alt="Me Myself and I" style="max-width:45%;height: auto;"; align= "left";>
     </p>
     <h1 style="text-align:center" ><br>Allison Todd</h1>
-    <h4 style="text-align:center" ><br>Hi, I'm a first-year student at Washington University in St. Louis. I'm a systems engineering and Business double major. At BusyBear I'm tasked with managing and updating all server-side applications including our website and database. </h4><br><br><br><br>
+    <h4 style="text-align:center" ><br>Hi! I’m a first-year student at Washington University in St. Louis from Lufkin, Texas. I’m majoring in electrical engineering with a double minor in Computer Science and Ancient Studies. At BusyBear I work on design and logistics making sure everyone is moving forward with a smile!
+</h4><br><br><br><br>
  <div class="links">
     <li> <a href="https://classes.engineering.wustl.edu/ese205/core/index.php?title=BusyBear" class="w3-bar-item w3-button w3-hide-small w3-padding-large"> Visit Our Wiki!  </a>  </li></div>
 
